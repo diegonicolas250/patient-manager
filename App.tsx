@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import PatientListScreen from './screens/PatientListScreen';
 
 export default function App() {
+  const statusBarHeight = StatusBar.currentHeight || 0;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{ marginTop: statusBarHeight }}>
+      <PatientListScreen />
+    </SafeAreaView>
   );
 }
 
